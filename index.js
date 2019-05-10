@@ -15,10 +15,10 @@ function round(method, number, precision) {
 	}
 
 	let exponent;
-	[number, exponent] = `${number}e`.split('e');
+	const [number, exponent] = `${number}e`.split('e');
 	let result = Math[method](`${number}e${Number(exponent) + precision}`);
 
-	[number, exponent] = `${result}e`.split('e');
+	const [number, exponent] = `${result}e`.split('e');
 	result = Number(`${number}e${Number(exponent) - precision}`);
 
 	if (isRoundingAndNegative) {
